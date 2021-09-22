@@ -13,8 +13,11 @@ const cities = [
 const MainPage = () => {
     const history = useHistory()
 
-    const onClickHandler = () => {
-        history.push("/city")
+    const onClickHandler = (city, countryCode) => {
+        console.log(`city`, city)
+        console.log(`countryCode`, countryCode)
+        
+        history.push(`/city/${countryCode}/${city}`)
     }
 
     return (
