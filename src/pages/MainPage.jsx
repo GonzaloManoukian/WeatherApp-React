@@ -2,13 +2,7 @@ import React from 'react'
 import { useHistory } from 'react-router'
 import CityList from './../components/CityList'
 import AppFrame from '../components/AppFrame/AppFrame'
-
-const cities = [
-    { city: "Buenos Aires", country: "Argentina", countryCode: "AR" },
-    { city: "Bogota", country: "Colombia", countryCode: "CO" },
-    { city: "Madrid", country: "España", countryCode: "ES" },
-    { city: "Ciudad de Mexico", country: "Mexico", countryCode: "MX" }
-]
+import { getCities } from '../utils/serviceCity'
 
 const MainPage = () => {
     const history = useHistory()
@@ -23,7 +17,7 @@ const MainPage = () => {
     return (
         <AppFrame>
             {/* <Paper elevation={3}> */}
-                <CityList cities={cities} onClickCity={onClickHandler} />
+                <CityList cities={getCities()} onClickCity={onClickHandler} />
             {/* </Paper> */}
         </AppFrame>
     )
